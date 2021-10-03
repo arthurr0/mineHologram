@@ -24,8 +24,11 @@ Minecraft hologram library.
 private final HologramAPI api = new HologramAPI();
 
 public void onEnalbe(){     
-    api.createHologram(location); //location, line height is defalt 0.25
-    api.createHologram(location.clone().add(0, 10, 0), 0.5); //location and line height
+    Hologram hologram = api.createHologram(location.clone().add(0, 10, 0), 0.5); //location and line height
+ 
+    hologram.addLine("Test line!");
+    hologram.setLine(0, "New test message!");
+    hologram.removeLine(0);
 }
 
 public void onDisable() {
