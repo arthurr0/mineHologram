@@ -34,14 +34,9 @@ public class Hologram {
                 this.spawnEntity(this.highestLineLocation().clone().clone().add(0, -this.lineHeight, 0));
         this.configureArmorStand(armorStand);
 
-        HologramLine line = HologramLine.builder()
-                .index(this.highestIndex() + 1)
-                .armorStand(armorStand)
-                .location(armorStand.getLocation())
-                .text(message)
-                .build();
-        line.prepareLine();
-        this.lines.listIterator().add(line);
+        HologramLine hologramLine = new HologramLine(this.getHighestIndex(), message, armorStand.getLocation(), armorStand);
+        hologramLine.prepareLine();
+        this.lines.listIterator().add(hologramLine);
     }
 
     public void setLine(int index, String text) {
@@ -99,10 +94,10 @@ public class Hologram {
     }
 
     private Location highestLineLocation() {
-        return this.getLine(this.highestIndex()).getLocation();
+        return this.getLine(this.getHighestIndex()).getLocation();
     }
 
-    private int highestIndex() {
+    private int getHighestIndex() {
         AtomicInteger atomicInteger = new AtomicInteger(0);
         this.lines.forEach(line -> {
             if (line.getIndex() > atomicInteger.get()) {

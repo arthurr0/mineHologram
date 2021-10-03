@@ -1,17 +1,22 @@
 package pl.minecodes.minehologram.hologram.element;
 
-import lombok.Builder;
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
 import pl.minecodes.minehologram.color.ColorUtil;
 
-@Builder
 public class HologramLine {
 
     private int index;
     private String text;
     private Location location;
-    private ArmorStand armorStand;
+    private final ArmorStand armorStand;
+
+    public HologramLine(int index, String text, Location location, ArmorStand armorStand) {
+        this.index = index;
+        this.text = text;
+        this.location = location;
+        this.armorStand = armorStand;
+    }
 
     public void prepareLine() {
         if (this.text.isEmpty()) {
@@ -38,7 +43,6 @@ public class HologramLine {
     public void removeLine() {
         this.armorStand.remove();
     }
-
 
     public int getIndex() {
         return index;
