@@ -1,6 +1,22 @@
-#mineHologram
+<h3>mineHologram</h3>
 Minecraft hologram library.
+<br>
+<br>
+```xml
+<repository>
+    <id>mineCodes-repo</id>
+    <url>https://repo.minecodes.pl/</url>
+</repository>
 
+<dependency>
+    <groupId>pl.minecodes</groupId>
+    <artifactId>mineHologram</artifactId>
+    <version>1.0.4</version>
+</dependency>
+```
+
+<br>
+<br>
 
 ```java
 
