@@ -1,6 +1,6 @@
 ## mineHologram
 
-Minecraft hologram library. Recommended use in 1.17+ version.
+Minecraft hologram library. Recommended use in 1.13+ version.
 
 #### Maven
 
