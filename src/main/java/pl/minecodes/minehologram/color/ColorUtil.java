@@ -20,36 +20,6 @@ public class ColorUtil {
     private ColorUtil() {
     }
 
-    public static void sendActionBarMessage(Player player, String message) {
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(implementColors(message)));
-    }
-
-    public static void sendMessage(CommandSender sender, String message) {
-        sender.sendMessage(implementColors(message));
-    }
-
-    public static void sendMessage(Player player, String message) {
-        player.sendMessage(implementColors(message));
-    }
-
-    public static void broadcastMessage(String message) {
-        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            sendMessage(onlinePlayer, message);
-        }
-    }
-
-    public static void broadcastMessage(String message, String permission) {
-        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            if (onlinePlayer.hasPermission(permission)) {
-                sendMessage(onlinePlayer, message);
-            }
-        }
-    }
-
-    public static String locationToMessage(Location location) {
-        return "x: " + location.getBlockX() + " y: " + location.getBlockY() + " z: " + location.getBlockZ();
-    }
-
     public static String implementColors(String message) {
         if (message == null) {
             return null;
