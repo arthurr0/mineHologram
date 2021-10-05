@@ -1,12 +1,6 @@
 package pl.minecodes.minehologram.color;
 
 import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class ColorUtil {
 
-    private static final Pattern hexPattern = Pattern.compile("#[a-fA-F0-9]{6}");
+    private static final Pattern HEX_PATTERN = Pattern.compile("#[a-fA-F0-9]{6}");
 
     private ColorUtil() {
     }
@@ -24,7 +18,7 @@ public class ColorUtil {
         if (message == null) {
             return null;
         }
-        for (Matcher matcher = hexPattern.matcher(message); matcher.find(); matcher = hexPattern.matcher(message)) {
+        for (Matcher matcher = HEX_PATTERN.matcher(message); matcher.find(); matcher = HEX_PATTERN.matcher(message)) {
             String color = message.substring(matcher.start(), matcher.end());
             message = message.replace(color, ChatColor.of(color) + "");
         }
