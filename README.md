@@ -51,10 +51,10 @@ Minecraft hologram library. Recommended use in 1.17+ version.
 
 ```java
 
-private final HologramAPI api=new HologramAPI();
+private final HologramAPI api = new HologramAPI();
 
 public void onEnalbe(){
-    Hologram hologram=api.createHologram(location.clone().add(0,10,0),0.5); //location and line height
+    Hologram hologram = api.createHologram(location.clone().add(0,10,0), 0.5); //location and line height
 
     hologram.addLine("Test line!");
     hologram.setLine(0,"New test message!");
